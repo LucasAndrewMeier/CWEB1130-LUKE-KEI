@@ -4,7 +4,8 @@
 express, handlebars, nodemon, uniq
 
 -------------------------------
-uniq example
+## uniq example
+
 var arr = [1, 1, 2, 2, 3, 5]
  
 require("uniq")(arr)
