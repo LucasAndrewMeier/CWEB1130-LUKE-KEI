@@ -4,24 +4,40 @@
 install
 express, handlebars, nodemon
 
--------------------------------
+-------------------------------------------------------------------------------------------------------------------------------
 MN Pet Adoption Center
-RestAPI 
-info: https://www.petrescue.com.au/api/docs
-pictures: https://dog.ceo/dog-api/
-
-Design a pretty site
+-------------------------------------------------------------------------------------------------------------------------------
+BACKEND
 
 req 1 
 	- CenterAdmin user
 	- guest users
-req 2
-
-req 3
+Req 2
+	-
+Req 3
 	RestAPI 
 	- info: https://www.petrescue.com.au/api/docs
 	- pictures: https://dog.ceo/dog-api/
-req 4
-	
-req 5
--------------------------------
+Req 4
+	-
+
+FRONTEND - react
+
+Req 5
+	-
+Req 6
+	-
+Req 7
+	-
+
+TECH, TOOLS, PROCESS
+
+Req 8
+	-
+Req 9
+	-
+Req 10
+	-
+
+-------------------------------------------------------------------------------------------------------------------------------
+
