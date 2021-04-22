@@ -16,8 +16,7 @@ Req 2
 	-  
 Req 3  
 	RestAPI   
-	- info: https://www.petrescue.com.au/api/docs  
-	- pictures: https://dog.ceo/dog-api/  
+	- adoption pet listings: https://www.petrescue.com.au/api/docs/show_listing
 Req 4  
 
 
