@@ -4,7 +4,7 @@ var fs = require('fs');
 var user = require('../model/user-structure.js');
 
 /* CREATE USER PROFILE */
-router.post('/add-user', function(req,res,next){
+router.post('/', function(req,res,next){
     //USE DATA MODEL STRUCT FROM USER-STRUCT
     user.user_name = req.body.user_name;
     user.first_name = req.body.first_name;
@@ -29,11 +29,13 @@ router.post('/add-user', function(req,res,next){
     fs.writeFile('./users.json', userString, err => {
         //error handling
         if (err) {
-            console.log('Error writing file', err)
+            console.log('Error writing file', err);
         } else {
-            console.log('Succesfully wrote file')
+            console.log('Succesfully wrote file');
         }
     })
+
+    res.render('add-user', user);
 })
 
 module.exports = router;

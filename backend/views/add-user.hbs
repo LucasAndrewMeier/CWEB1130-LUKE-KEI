@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="MN Pet Adoption Center"
+    />
+    <link rel='stylesheet' href='/public/stylesheets/style.css' />
+
+    <title>MN Pet Adoption Center</title>
+    <style>
+      .users{ 
+        display: block;
+        height: 50%;
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="users">
+      <h1>New User</h1>
+      <p>UserName: {{user_name}}</p>
+      <p>First Name: {{first_name}}</p>
+      <p>Last Name: {{last_name}}</p>
+    </div>
+    <a href="/user"><button type="button" class="btn btn-succss">View All Users</button></a>
+  </body>
+</html>
