@@ -4,7 +4,7 @@ var fs = require('fs');
 var user = require('../model/user-structure.js');
 
 /* CREATE USER PROFILE */
-router.post('/', function(req,res,next){
+router.post('/add-user', function(req,res,next){
     //USE DATA MODEL STRUCT FROM USER-STRUCT
     user.user_name = req.body.user_name;
     user.first_name = req.body.first_name;

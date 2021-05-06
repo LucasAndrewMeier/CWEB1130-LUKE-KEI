@@ -28,5 +28,5 @@ router.get('/', function(req, res, next) {
 
 
 });
-  gt  
+
 module.exports = router;
