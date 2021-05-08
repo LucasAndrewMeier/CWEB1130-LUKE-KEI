@@ -3,7 +3,11 @@ var router = express.Router();
 
 /* API */
 router.get('/', function(req, res, next) {
-
+        //USE DATA MODEL STRUCT FROM API-STRUCT
+        pet.species= req.body.species;
+        pet.name = req.body.name;
+        pet.breed = req.body.breed;
+        pet.gender = req.body.gender;
     //url from api
     const url = 'https://www.petrescue.com.au/api/listings/:id';
     
@@ -24,6 +28,7 @@ router.get('/', function(req, res, next) {
         console.log('An error', error);
     });
 
+    res.render("pets", pet)
     request.end()
 
 
