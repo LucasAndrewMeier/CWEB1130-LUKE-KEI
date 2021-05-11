@@ -9,7 +9,7 @@ var userSite = JSON.parse(userData);
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   var createdUsers = userSite
-  res.render('user', {createdUsers})
+  res.render('users', {createdUsers})
 });
 
 

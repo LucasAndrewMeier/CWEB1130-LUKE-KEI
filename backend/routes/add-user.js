@@ -3,6 +3,8 @@ var router = express.Router();
 var fs = require('fs');
 var user = require('../model/user-structure.js');
 
+
+
 /* CREATE USER PROFILE */
 router.post('/', function(req,res,next){
     //USE DATA MODEL STRUCT FROM USER-STRUCT
@@ -35,7 +37,7 @@ router.post('/', function(req,res,next){
         }
     })
 
-    res.render('add-user', user);
+    res.render('users', user);
 })
 
 module.exports = router;

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="MN Pet Adoption Center"
+    />
+    <title>MN Pet Adoption Center</title>
+
+    <style>
+      table{
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+  
+      td, th{
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+  
+      tr:nth-child(even){
+        background-color: #dddddd;
+      }
+      body{
+        display: flexbox;
+        flex-flow: row;
+      }
+      .users{ 
+        display: block;
+        height: 50%;
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Add Users</h1>
+      <div class="createUser">
+        <form action="/add-user" method="POST">
+            <input type="text" name="user_name" class="form-control" placeholder="Enter Username" size= "24"></input><br></br>
+            <input type="text" name="first_name" class="form-control" placeholder="Enter First Name" size= "24"></input><br></br>
+            <input type="text" name="last_name" class="form-control" placeholder="Enter Last Name" size= "24"></input><br></br>
+            <input type="text" name="password" class="form-control" placeholder="Enter A Password" size= "24"></input><br></br>
+            <input type="submit" class="btn btn-primary" value="submit"></input>
+        </form>  
+    </div>
+    <div class="users">
+      <h1>New User</h1>
+      <p>UserName: {{user_name}}</p>
+      <p>First Name: {{first_name}}</p>
+      <p>Last Name: {{last_name}}</p>
+      <a href="/user"><input type="button" class="btn btn-succss">Update Users</button></a>
+    </div>
+   <h1>Users created</h1>
+    <table>
+        <tr>
+          <th>UserName</th>
+          <th>First</th>
+          <th>Last</th>
+          <th>Password</th>
+        </tr>
+        {{#each createdUsers}}
+          <tr>
+              <td>{{this.user_name}}</td>
+              <td>{{this.first_name}}</td>
+              <td>{{this.last_name}}</td>
+              <td>{{this.password}}</td>
+          </tr>
+        {{/each}}
+    </table>
+  </body>
+</html>
