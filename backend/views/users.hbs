@@ -27,36 +27,41 @@
         background-color: #dddddd;
       }
       body{
-        display: flexbox;
+        display: flex;
         flex-flow: row;
+
       }
       .users{ 
         display: block;
-        height: 50%;
-        width: 50%;
+        
+        height: fit-content;
+        width: fit-content;
       }
     </style>
   </head>
   <body>
-    <h1>Add Users</h1>
-      <div class="createUser">
-        <form action="/add-user" method="POST">
+    
+      <div class="users">
+        <h1>Add Users</h1>
+        <form action="/userFunctions" method="POST">
             <input type="text" name="user_name" class="form-control" placeholder="Enter Username" size= "24"></input><br></br>
             <input type="text" name="first_name" class="form-control" placeholder="Enter First Name" size= "24"></input><br></br>
             <input type="text" name="last_name" class="form-control" placeholder="Enter Last Name" size= "24"></input><br></br>
             <input type="text" name="password" class="form-control" placeholder="Enter A Password" size= "24"></input><br></br>
             <input type="submit" class="btn btn-primary" value="submit"></input>
-        </form>  
+        </form> 
+        <br></br>
+
     </div>
     <div class="users">
-      <h1>New User</h1>
-      <p>UserName: {{user_name}}</p>
-      <p>First Name: {{first_name}}</p>
-      <p>Last Name: {{last_name}}</p>
-      <a href="/user"><input type="button" class="btn btn-succss">Update Users</button></a>
+      <h1>User Confirm</h1>
+            <input type="text" name="user_name" class="form-control" placeholder="{{user_name}}" size= "24"></input><br></br>
+            <input type="text" name="password" class="form-control" placeholder="{{password}}" size= "24"></input><br></br>
+      <a href="/userFunctions"><input type="button" class="btn btn-primary" value="Display Users" ></button></a>
     </div>
-   <h1>Users created</h1>
-    <table>
+   <div class="users">
+         <table>
+      <h1>Users created</h1>
         <tr>
           <th>UserName</th>
           <th>First</th>
@@ -72,5 +77,7 @@
           </tr>
         {{/each}}
     </table>
+   </div>
+
   </body>
 </html>
