@@ -14,10 +14,7 @@ router.post('/', function(req,res,next){
 
     for(var x = 0; x < userData.length; x++){
         if(username == userData.user_name && userpass == userData.password){
-            res.render('users', user.user_name);
-        }
-        else{
-            res.render('notauser');
+            res.render('/user', user.user_name);
         }
     }
 })
