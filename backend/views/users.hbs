@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="MN Pet Adoption Center"
+    />
+    <title>MN Pet Adoption Center</title>
+
+    <style>
+      table{
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+  
+      td, th{
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+  
+      tr:nth-child(even){
+        background-color: #dddddd;
+      }
+      body{
+        display: flex;
+        flex-flow: row;
+
+      }
+      .users{ 
+        display: block;
+        
+        height: fit-content;
+        width: fit-content;
+      }
+    </style>
+  </head>
+  <body>
+    
+      <div class="users">
+        <h1>Add Users</h1>
+        <form action="/userFunctions" method="POST">
+            <input type="text" name="user_name" class="form-control" placeholder="Enter Username" size= "24"></input><br></br>
+            <input type="text" name="first_name" class="form-control" placeholder="Enter First Name" size= "24"></input><br></br>
+            <input type="text" name="last_name" class="form-control" placeholder="Enter Last Name" size= "24"></input><br></br>
+            <input type="text" name="password" class="form-control" placeholder="Enter A Password" size= "24"></input><br></br>
+            <input type="submit" class="btn btn-primary" value="submit"></input>
+        </form> 
+        <br></br>
+
+    </div>
+    <div class="users">
+      <h1>User Confirm</h1>
+            <input type="text" name="user_name" class="form-control" placeholder="{{user_name}}" size= "24"></input><br></br>
+            <input type="text" name="password" class="form-control" placeholder="{{password}}" size= "24"></input><br></br>
+      <a href="/userFunctions"><input type="button" class="btn btn-primary" value="Display Users" ></button></a>
+    </div>
+   <div class="users">
+         <table>
+      <h1>Users created</h1>
+        <tr>
+          <th>UserName</th>
+          <th>First</th>
+          <th>Last</th>
+          <th>Password</th>
+        </tr>
+        {{#each createdUsers}}
+          <tr>
+              <td>{{this.user_name}}</td>
+              <td>{{this.first_name}}</td>
+              <td>{{this.last_name}}</td>
+              <td>{{this.password}}</td>
+          </tr>
+        {{/each}}
+    </table>
+   </div>
+
+  </body>
+</html>
