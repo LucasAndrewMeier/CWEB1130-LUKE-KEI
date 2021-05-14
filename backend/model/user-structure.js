@@ -1,6 +1,6 @@
 
 var user = {
-    user_name: "",
+    username: "",
     password: ""
 }
 exports.user;
