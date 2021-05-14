@@ -10,21 +10,30 @@
 </style>
 </head>
 <body>
-    <h1>List of users:</h1>
+    <h1>List of users:</h1> 
+        <form action="/edituser" method="POST">    
+            <input type="text"  name="name" class="form-control" placeholder="name" size="40"><br>
+            <input type="text"  name="password" class="form-control" placeholder="password" size="40"><br>
+            <input type="submit" class="btn btn-primary" value="submit">
+        </form>
     <table>
             <tr>
                 
                 <th>Name password</th>
                 
-                <th>edit</th><br>
+                <th><button value="edit"></button></th><br>
                 <th>delete</th>
             </tr>
         {{#each createduser}}
             <tr>
                 <td>{{this.name}}</td>
                 <td>{{this.password}}</td>
+                <td></td>
             </tr>
         {{/each}}
     </table>
+    <script>
+
+    </script>
 </body>
 </html>

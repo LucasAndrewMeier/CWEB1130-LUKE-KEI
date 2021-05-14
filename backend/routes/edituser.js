@@ -4,9 +4,8 @@ var fs = require('fs');
 let userData = fs.readFileSync('./users.json');
 let siteUsers = JSON.parse(userData);
 
-router.put('/edituser',function(req,res){
+router.get('/edituser',function(req,res){
     user.name = req.body.name;
-    user.password = req.body.password;
     console.log(user);
     siteUsers.push(user);
   
