@@ -5,11 +5,17 @@ var user = require('../model/user-structure.js');
 
 let userData = fs.readFileSync('./users.json');
 let siteUsers = JSON.parse(userData);
+const usersString = JSON.stringify(siteUsers);
 
 // Create user
 router.post('/', function(req, res, next) {
 
-   
+    var x;
+    user.id = userData.forEach(user => {
+        for( x = 0; x < userData.length; x++){
+            user.id = x+1;
+        }
+    });
     user.name = req.body.name;
     user.password = req.body.password;
     console.log(user);

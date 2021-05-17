@@ -4,10 +4,11 @@ var fs = require('fs');
 let userData = fs.readFileSync('./users.json');
 let siteUsers = JSON.parse(userData);
 
-router.get('/listofusrs',function(req,res){
+router.get('/listofusers',function(req,res){
     user.name = req.body.name;
+    user.pass = req.body.password;
     console.log(user);
-    siteUsers.push(user);
+    //siteUsers.push(user);
 
       
     const usersString = JSON.stringify(siteUsers);
@@ -19,11 +20,7 @@ router.get('/listofusrs',function(req,res){
         }else{
             usersString[x].name = user.name;
             x = usersString.length;
-        }
-    }
-  
-        const usersString = JSON.stringify(siteUsers)
-        fs.writeFile('./users.json', usersString, err => {
+            fs.writeFile('./users.json', usersString, err => {
             //error handling if, issue arises with file, else output to successfully wrote file
             if (err) {
                 console.log('Error writing file', err)
@@ -31,7 +28,11 @@ router.get('/listofusrs',function(req,res){
                 console.log('Successfully overwrote file')
             }
         })
-    res.render('edituser', user)
+        }
+    }
+  
+
+    res.render('display', user)
 })
 
 
