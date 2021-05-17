@@ -5,22 +5,27 @@ var user = require('../model/user-structure.js');
 
 let userData = fs.readFileSync('./users.json');
 let siteUsers = JSON.parse(userData);
-const usersString = JSON.stringify(siteUsers);
 
 // Create user
 router.post('/', function(req, res, next) {
 
-    var x;
-    user.id = userData.forEach(user => {
-        for( x = 0; x < userData.length; x++){
-            user.id = x+1;
-        }
-    });
+   
     user.name = req.body.name;
     user.password = req.body.password;
     console.log(user);
     siteUsers.push(user);
+  
+        const usersString = JSON.stringify(siteUsers);
+        for(var x = 0; x < usersString.length; x++){
+            if(user.name != usersString[x].name){
+                siteUsers.push(user)
+                x = usersString.length;
 
+            }else{
+                usersString[x].name = user.name;
+                x = usersString.length;
+            }
+        }
 
         fs.writeFile('./users.json', usersString, err => {
             //error handling if, issue arises with file, else output to successfully wrote file
