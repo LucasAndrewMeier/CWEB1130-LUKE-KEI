@@ -8,6 +8,7 @@ let siteUsers = JSON.parse(userData);
 
 // Create user
 router.post('/', function(req, res, next) { 
+    user.id = req.body.selectedrow;
     user.name = req.body.name;
     user.password = req.body.password;
     siteUsers[req.body.selectedrow].name = user.name;
@@ -15,6 +16,16 @@ router.post('/', function(req, res, next) {
     
 
     const usersString = JSON.stringify(siteUsers);
+    for(var x = 0; x < usersString.length; x++){
+        if(user.name != usersString[x].name){
+            siteUsers.push(user)
+            x = usersString.length;
+
+        }else{
+            usersString[x].name = user.name;
+            x = usersString.length;
+        }
+    }
 
         fs.writeFileSync('./users.json', usersString, err => {
             //error handling if, issue arises with file, else output to successfully wrote file

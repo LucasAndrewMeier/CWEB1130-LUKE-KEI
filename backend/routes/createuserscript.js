@@ -8,8 +8,6 @@ let siteUsers = JSON.parse(userData);
 
 // Create user
 router.post('/', function(req, res, next) {
-
-   
     user.name = req.body.name;
     user.password = req.body.password;
     console.log(user);

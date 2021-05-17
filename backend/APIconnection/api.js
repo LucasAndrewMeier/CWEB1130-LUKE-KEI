@@ -16,7 +16,7 @@ router.get('/', function(req,res,next){
             "useQueryString": true
         }
     };
-    
+        
         req = http.request(options, function (res) {
         const chunks = [];
     
@@ -32,8 +32,13 @@ router.get('/', function(req,res,next){
     });
     
     req.end();
-    res.send({apiDATA});
 });
 
+function displayNBAdata(data){
+    const nickname = data.nickname[0];
+    for(var x = 0;x< nickname.length; x++  ){
+        {nickname}
+    }
+}
 
 module.exports = router;

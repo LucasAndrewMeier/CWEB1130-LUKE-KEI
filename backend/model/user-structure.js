@@ -1,6 +1,5 @@
 
 var user = {
-    id: "",
     username: "",
     password: ""
 }
