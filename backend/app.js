@@ -5,10 +5,13 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/user');
-var addUserRouter = require('./routes/userFunctions');
-var authenticationRouter = require('./routes/authentication');
-
+var createuserscriptRouter = require('./routes/createuserscript');
+var displayRouter = require('./routes/display');
+var listofusersRouter = require('./routes/listofusers');
+var createUserRouter = require('./routes/createuser');
+var editUserscriptRouter = require('./routes/edituserscript');
+var apiRouter = require('./APIconnection/api');
+var loginRouter = require('./routes/login');
 
 var app = express();
 
@@ -24,10 +27,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static('public'));
 
 app.use('/', indexRouter);
-
-app.use('/user', usersRouter);
-app.use('/userFunctions', addUserRouter);
-app.use('/users', authenticationRouter);
+app.use('/listofusers', listofusersRouter);
+app.use('/createuser', createUserRouter);
+app.use('/adduser', createuserscriptRouter);
+app.use('/display', displayRouter);
+app.use('/edituser',editUserscriptRouter)
+app.use('/nbadata', apiRouter);
+app.use('/login',loginRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
