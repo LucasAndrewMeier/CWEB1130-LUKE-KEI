@@ -17,6 +17,7 @@ Req 3
 	RestAPI   
 	- just to make an api work i pulled one from an nba stats api to display making a connection
 	- api-nba-v1.p.rapidapi.com
+	- the api does not work with the heroku app, but in a local code editor it makes a connection and displays the nba data in the terminal
 Req 4  
 
 
