@@ -12,6 +12,7 @@ var createUserRouter = require('./routes/createuser');
 var editUserscriptRouter = require('./routes/edituserscript');
 var apiRouter = require('./APIconnection/api');
 var loginRouter = require('./routes/login');
+var homeRouter = require('./routes/home');
 
 var app = express();
 
@@ -34,6 +35,7 @@ app.use('/display', displayRouter);
 app.use('/edituser',editUserscriptRouter)
 app.use('/nbadata', apiRouter);
 app.use('/login',loginRouter);
+app.use('/home',homeRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
